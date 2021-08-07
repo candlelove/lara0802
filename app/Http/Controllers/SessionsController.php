@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
-
+use Illuminate\Support\Facades\Auth;
 
 class SessionsController extends Controller
 {
@@ -32,5 +31,10 @@ class SessionsController extends Controller
 
         return;
 
+    }
+
+    public function destroy(Request $request)
+    {
+        session();
     }
 }
