@@ -98,6 +98,7 @@ class UsersController extends Controller
          return back();
      }
 
+     //本地测试用
      public function sendEmailConfirmationTo($user)
      {
          $view = 'emails.confirm';
@@ -113,6 +114,19 @@ class UsersController extends Controller
          });
 
      }
+
+    //上线用
+    // protected function sendEmailConfirmationTo($user)
+    // {
+    //     $view = 'emails.confirm';
+    //     $data = compact('user');
+    //     $to = $user->email;
+    //     $subject = "感谢注册 Weibo 应用！请确认你的邮箱。";
+
+    //     Mail::send($view, $data, function ($message) use ($to, $subject) {
+    //         $message->to($to)->subject($subject);
+    //     });
+    // }
 
      public function confirmEmail($token)
      {
